@@ -13,3 +13,9 @@ AxisBank <- AxisBank[order(AxisBank$Date_stock),]
 
 ## Axis Bank had last split the face value of its shares 
 ## from Rs 10 to Rs 2 in 2014.The share has been quoting on an ex-split basis from July 28, 2014.
+
+# we need to multiple by 5* share price after the split
+Date_split <- as.Date('2014-07-14')
+AxisBank$split <- 1
+AxisBank$split[which(AxisBank$Date_stock > Date_split)] <- 5  
+AxisBank$Open <- AxisBank$Open*AxisBank$split
