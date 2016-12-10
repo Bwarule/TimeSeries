@@ -9,4 +9,7 @@ AxisBank= read.csv("Axis Bank.csv")
 # 4 11/14/2016 498.4 503.45 470.10 473.45 434700    473.45
 
 AxisBank$Date_stock <- as.Date(AxisBank$Date, format = "%m/%d/%Y") 
-AxisBank <- AxisBank[order(AxisBank$Date_stock),]				   
+AxisBank <- AxisBank[order(AxisBank$Date_stock),]		
+
+## Axis Bank had last split the face value of its shares 
+## from Rs 10 to Rs 2 in 2014.The share has been quoting on an ex-split basis from July 28, 2014.
