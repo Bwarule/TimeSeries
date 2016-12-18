@@ -21,3 +21,14 @@ AxisBank$split[which(AxisBank$Date_stock > Date_split)] <- 5  
 AxisBank$Open <- AxisBank$Open*AxisBank$split
 
 myts <- ts(AxisBank$Open, frequency=52, start=c(1998,46))
+
+## ------------------ stationary ----------
+Box.test(myts, lag=20, type="Ljung-Box")
+
+## adf test for stationary
+adf.test(myts, alternative = "stationary")
+adf.test(diff(myts), alternative = "stationary")
+
+## kpss  test for stationary
+kpss.test(myts)
+kpss.test(diff(myts))
