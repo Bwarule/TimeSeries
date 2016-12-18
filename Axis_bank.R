@@ -20,4 +20,4 @@ AxisBank$split <- 1
 AxisBank$split[which(AxisBank$Date_stock > Date_split)] <- 5  
 AxisBank$Open <- AxisBank$Open*AxisBank$split
 
-myts - ts(AxisBank$Open, frequency=52, start=c(1998,46))
+myts <- ts(AxisBank$Open, frequency=52, start=c(1998,46))
